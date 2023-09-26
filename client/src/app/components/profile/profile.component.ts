@@ -23,13 +23,7 @@ export class ProfileComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Get the userId from the AuthService
-    console.log(this.authService.getUserData());
-    
-    // Set the userId directly in the user object
-
   
-    
     };
   }
 
