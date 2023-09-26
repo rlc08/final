@@ -1,0 +1,45 @@
+doctype html
+html
+  head
+    title=title
+
+
+    // Bootstrap CSS
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet',href='/stylesheets/style.css')
+
+  body
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+      a.navbar-brand(href='/') My Blog
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item
+            a.nav-link(href='/') Home
+          li.nav-item
+            a.nav-link(href='/about') About
+          li.nav-item
+            a.nav-link(href='/contact') Contact
+        ul.navbar-nav.ml-auto
+          li.nav-item
+            a.nav-link(href='/login') Login 
+
+    .container
+      h2.my-4.text-dark Recent posts
+      .row
+        each post,i in blog || []
+          .col-md-4.mb-4
+            .card.shadow-sm.card-custom
+              img.card-img-top(src='/images/#{post.img}', alt='Card image cap',style='height: 200px; object-fit: cover;')
+              .card-body
+                h5.card-title.text-primary= post.atitle
+                p.card-text.text-secondary= post.desc
+                a.btn.btn-outline-primary.btn-sm(href='/article-info?article='+i) Read More &rarr;
+
+
+    // Bootstrap JS
+    script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
+    script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js')

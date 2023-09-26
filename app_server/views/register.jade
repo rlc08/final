@@ -1,0 +1,57 @@
+doctype html
+html
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Register
+    link(rel='stylesheet', href='/bootstrap/css/amelia.bootstrap.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    
+
+  body
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+      a.navbar-brand(href='/') My Blog
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item
+            a.nav-link(href='/') Home
+          li.nav-item
+            a.nav-link(href='/about') About
+          li.nav-item
+            a.nav-link(href='/contact') Contact
+        ul.navbar-nav.ml-auto
+          li.nav-item
+            a.nav-link(href='/login') Login 
+    section.vh-100
+      .container.h-100
+        .row.d-flex.justify-content-center.align-items-center.h-100
+          .col-12.col-md-9.col-lg-7.col-xl-6
+            .card(style='border-radius: 15px')
+              .card-body.p-5
+                h2.text-uppercase.text-center.mb-5 Create an account
+                form(action='/auth/register', method='post')  
+                  .form-outline.mb-4
+                    input#form3Example1cg.form-control.form-control-lg(type='text', name='firstName', required)
+                    label(for='form3Example1cg') First Name
+                  .form-outline.mb-4
+                    input.form-control.form-control-lg(type='text', name='lastName', required)
+                    label.form-label(for='form3Example3cg') Last Name
+                  .form-outline.mb-4
+                    input.form-control.form-control-lg(type='email', name='email', required)
+                    label.form-label(for='form3Example4cg') Email
+                  .form-outline.mb-4
+                    input.form-control.form-control-lg(type='password', name='password', required)
+                    label.form-label(for='form3Example4cdg') Password
+
+                  .d-flex.justify-content-center
+                    button.btn.btn-success.btn-block.btn-lg.gradient-custom-4.text-body(type='submit' style='background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))') Register
+                  p.text-center.text-muted.mt-5.mb-0
+                    | Have already an account? 
+                    a.fw-bold.text-body(href='/login')
+                      u Login here
+          
+    script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
+    script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js')

@@ -1,0 +1,11 @@
+.card {
+    width: 400px;
+    margin: 0 auto; /* Center the card horizontally */
+    margin-top: 20px; /* Add top margin for spacing */
+    padding: 20px; /* Add padding inside the card */
+  }
+  
+  .form-group {
+    margin-bottom: 15px; /* Add vertical spacing between form groups */
+  }
+  

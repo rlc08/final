@@ -1,0 +1,8 @@
+/* Add this to your styles.css */
+.navbar-nav.ml-auto .nav-link {
+    padding-right: 1rem; /* Add some padding to the right */
+  }
+  
+.navbar-brand {
+    padding-left: 1rem;
+}

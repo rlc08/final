@@ -1,0 +1,60 @@
+doctype html
+html
+  head
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Login
+    link(rel='stylesheet' href='/bootstrap/css/amelia.bootstrap.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
+    link(rel='stylesheet' href='/stylesheets/style.css')
+    
+
+  body
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+      a.navbar-brand(href='/') My Blog
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item
+            a.nav-link(href='/') Home
+          li.nav-item
+            a.nav-link(href='/about') About
+          li.nav-item
+            a.nav-link(href='/contact') Contact
+        ul.navbar-nav.ml-auto
+          li.nav-item
+            a.nav-link(href='/login') Login 
+   
+    section.vh-100.d-flex.align-items-center
+      .container-fluid.h-custom
+        .row.d-flex.justify-content-center.align-items-center.h-100
+          .col-md-9.col-lg-6.col-xl-5
+            img.img-fluid(src='/images/login.webp' alt='Sample image')
+          .col-md-8.col-lg-6.col-xl-4.offset-xl-1
+            form(action='/auth/login' method='POST')
+              .d-flex.flex-row.align-items-center.justify-content-center.justify-content-lg-start
+                p.lead.fw-normal.mb-0.me-3 Sign in 
+
+              // Email input
+              .form-outline.mb-4
+                input#form3Example3.form-control.form-control-lg(type='email' name='email' placeholder='Enter a valid email address')
+                label.form-label(for='form3Example3') Email address
+              // Password input
+              .form-outline.mb-3
+                input#form3Example4.form-control.form-control-lg(type='password' name='password' placeholder='Enter password')
+                label.form-label(for='form3Example4') Password
+              .d-flex.justify-content-between.align-items-center
+                // Checkbox
+                .form-check.mb-0
+                  input#form2Example3.form-check-input.me-2(type='checkbox' value='')
+                  label.form-check-label(for='form2Example3')
+                    | Remember me
+                a.text-body(href='#!') Forgot password?
+              .text-center.text-lg-start.mt-4.pt-2
+                button.btn.btn-primary.btn-lg(type='submit' style='padding-left: 2.5rem; padding-right: 2.5rem;') Login
+                p.small.fw-bold.mt-2.pt-1.mb-0
+                  | Don't have an account? 
+                  a.link-danger(href='/register') Register
+    script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
+    script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js')
